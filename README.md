@@ -22,6 +22,6 @@ npm run preview
 
 Windows에서 시스템 Node가 22인 이번 실습 환경은 앱에서 제공한 Node 24 런타임을 사용해 검사·빌드·미리보기를 실행했습니다. 개발 시 `.nvmrc`에 맞는 Node를 사용하세요.
 
-검사 기록과 사용자 확인 순서는 `docs/05_테스트결과.md`를 참조합니다. GitHub 업로드·Vercel 실제 배포는 이번 EPIC의 로컬 구현 완료와 구분합니다.
+검사 기록과 사용자 확인 순서는 `docs/05_테스트결과.md`를 참조합니다. 소스는 [GitHub planning_test](https://github.com/chaebin-e/planning_test)의 `main` 브랜치에 보관합니다. 사용자 지정 저장소는 공개이며 가상 자료만 포함합니다. Vercel 운영 배포는 아직 수행하지 않았습니다. GitHub 보관은 EPIC의 사용자 테스트 완료 판정과 별개입니다.
 
 참고 기술 문서: [Vite 시작](https://vite.dev/guide/), [Dexie 트랜잭션](https://dexie.org/docs/Dexie/Dexie.transaction()), [Vitest 검사](https://vitest.dev/guide/). 구현은 PRD·FRD·TRD를 기준으로 합니다.
