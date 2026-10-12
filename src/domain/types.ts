@@ -1,0 +1,11 @@
+export type Row = Record<string, unknown>;
+export type Menu = { menu_id: string; name: string; price: string; recipe_version: string; category: string };
+export type Material = { material_id: string; name: string; unit: string; pack_quantity: string };
+export type Recipe = { menu_id: string; recipe_version: string; material_id: string; quantity: string; unit: string; channel_only?: string };
+export type Price = { material_id: string; effective_date: string; pack_price: string; pack_quantity: string };
+export type Calendar = { date: string; is_open: boolean; record_complete: boolean };
+export type Sale = { sale_id: string; date: string; menu_id: string; channel: '매장' | '포장'; quantity: string; unit_price: string; discount_amount: string; net_sales: string; payment_fee: string | null; recipe_version: string; unit_food_cost_snapshot: string | null; unit_packaging_cost_snapshot: string | null; cost_basis?: CostLine[] };
+export type CostLine = { material_id: string; name: string; quantity: string; unit: string; effective_date: string; pack_price: string; pack_quantity: string; cost: string; packaging: boolean };
+export type SaleInput = { date: string; menu_id: string; channel: '매장' | '포장'; quantity: string; unit_price: string; discount_amount: string; payment_fee: string };
+export type Dataset = { meta: Row; menus: Menu[]; materials: Material[]; recipes: Recipe[]; price_history: Price[]; calendar: Calendar[]; sales: Sale[]; [key: string]: unknown };
+export type Snapshot = { data: Dataset; revision: number };

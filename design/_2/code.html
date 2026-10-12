@@ -1,0 +1,661 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-dim":"#e2d8d0","primary-container":"#4a3525","surface-cream":"#FAF8F5","on-secondary-fixed-variant":"#294e35","on-surface":"#1f1b16","error":"#ba1a1a","surface-container-highest":"#ebe1d8","tertiary-fixed-dim":"#ffb873","on-background":"#1f1b16","text-muted":"#6E6862","on-tertiary-fixed":"#2d1600","status-positive":"#2E5339","status-positive-bg":"#EBF2ED","on-primary-container":"#bb9d88","inverse-on-surface":"#f9efe6","surface-bright":"#fff8f4","on-tertiary":"#ffffff","primary":"#322011","surface-container-low":"#fcf2e9","on-primary-fixed-variant":"#594231","status-warning":"#B85D19","on-primary-fixed":"#29180a","surface-container-lowest":"#ffffff","surface-tint":"#725947","secondary-fixed-dim":"#a7d1af","surface-cream-raised":"#FFFFFF","surface-container-high":"#f0e6de","primary-fixed-dim":"#e1c0aa","on-surface-variant":"#4f453e","background":"#fff8f4","surface-variant":"#ebe1d8","inverse-surface":"#35302a","status-critical-bg":"#FAEAEB","status-warning-bg":"#FDF3EB","on-secondary":"#ffffff","tertiary":"#391d00","on-tertiary-fixed-variant":"#6a3b00","on-secondary-container":"#476d51","surface-container":"#f6ece3","border-warm":"#E5DED3","secondary-container":"#c2edca","secondary-fixed":"#c2edca","surface-cream-sunken":"#F2EDE4","tertiary-container":"#573000","status-critical":"#9E2A2B","outline-variant":"#d2c4bb","on-error":"#ffffff","primary-fixed":"#fedcc5","tertiary-fixed":"#ffdcbf","secondary":"#41674b","on-error-container":"#93000a","surface":"#fff8f4","outline":"#81756d","on-tertiary-container":"#e09240","inverse-primary":"#e1c0aa","on-primary":"#ffffff","text-charcoal":"#262422","error-container":"#ffdad6","on-secondary-fixed":"#00210e"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"0.75rem","space-lg":"1.5rem","margin-mobile":"1rem",margin:"2rem","space-sm":"0.5rem","space-xs":"0.25rem",gutter:"1.25rem","space-md":"1rem","space-xl":"2.25rem"},fontFamily:{"data-tabular-lg":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"data-tabular-md":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"data-tabular-sm":["JetBrains Mono"],"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"]},fontSize:{"data-tabular-lg":["20px",{lineHeight:"24px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-md":["13px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"data-tabular-md":["14px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"data-tabular-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}],"headline-xl-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface-cream text-on-surface font-body-md text-body-md min-h-screen"><div class=""><header class="fixed top-0 right-0 h-16 bg-surface-cream-raised/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(74,53,37,0.05)] z-40 px-gutter left-0"><div class="h-16 w-full flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-cream-sunken flex items-center justify-center shadow-xs"><span class="material-symbols-outlined text-primary text-[22px]">coffee</span></div><div class="hidden md:block mr-2"><div class="font-headline-sm text-headline-sm text-primary tracking-tight leading-tight">Prep Cafe ERP</div><div class="font-label-sm text-label-sm text-text-muted">프렙 성수 본점</div></div></div><div class="h-5 w-px bg-outline-variant"></div><nav class="flex items-center gap-1"><a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="daily-sales-management" href="#"><span class="material-symbols-outlined text-[18px]">point_of_sale</span><span class="">일일 판매 관리</span></a><a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="menu-profitability-analysis" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span><span class="">메뉴별 수익성 분석</span></a><a aria-current="page" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-surface-cream-raised font-bold transition-all font-label-md text-label-md shadow-xs" data-path="store-income-statement" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="">매장 기간별 손익</span></a><a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="inventory-stock-management" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="">재료 재고 및 입출고</span></a></nav></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-cream-sunken text-on-surface hover:bg-surface-container-high hover:text-on-surface transition-all cursor-pointer font-label-md text-label-md"><span class="material-symbols-outlined text-[18px] text-primary">settings_backup_restore</span><span class="font-semibold text-text-charcoal">데이터 백업·복원</span></button><div class="h-5 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-text-charcoal font-semibold leading-tight">김민준 점주</div><div class="font-body-sm text-body-sm text-text-muted leading-tight">관리자 권한</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen px-gutter py-space-md bg-surface-cream"><div class="flex flex-col w-full gap-space-lg pb-16">
+<!-- Top Bar: Filters, Status Banner & Action -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-text-charcoal tracking-tight">손익 계산서 (P&amp;L)</span>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-status-positive animate-pulse"></span>
+<span class="">기준: 발생주의(A안) · 일할 배분 적용</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+        임차료·인건비 등 월 고정비를 영업일수 기준(18일/30일)으로 정밀 안분한 실시간 영업손익입니다.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<!-- Period Switcher Toggle -->
+<div class="inline-flex p-1 rounded-xl bg-surface-cream-sunken shadow-sm">
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-charcoal cursor-pointer" id="btn-toggle-daily" onclick="switchPeriod('daily')">
+          일별 조회
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all bg-surface-cream-raised text-primary font-bold shadow-sm cursor-pointer" id="btn-toggle-monthly" onclick="switchPeriod('monthly')">
+          월별 조회 (2026.09)
+        </button>
+</div>
+<!-- Cost Entry Modal Trigger -->
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:opacity-95 active:scale-95 transition-all cursor-pointer" onclick="toggleCostModal(true)">
+<span class="material-symbols-outlined text-[18px]">add_card</span>
+<span class="">비용 등록 / 배분 조정</span>
+</button>
+</div>
+</div>
+<!-- Operational Notice Banner (PRD Section 5 & 8) -->
+<div class="w-full rounded-xl bg-surface-container-low px-space-md py-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-status-warning-bg flex items-center justify-center text-status-warning shrink-0">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-charcoal">
+<span class="font-bold text-primary">실적 마감: 2026-09-18까지 실적 집계 완료</span>
+<span class="text-text-muted mx-1">|</span>
+<span class="text-text-muted">2026-09-19 ~ 09-30 (12일 잔여) 기간은 과거 60일 가중 평균 기반 예상치(회색 점선)로 자동 배분 표기됩니다.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-2 font-label-sm text-label-sm">
+<span class="inline-block w-3 h-0.5 bg-primary"></span>
+<span class="text-text-charcoal font-semibold">실적 (1~18일)</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm">
+<span class="inline-block w-3 h-0.5 border-b-2 border-dashed border-outline"></span>
+<span class="text-text-muted">예상 (19~30일)</span>
+</div>
+</div>
+</div>
+<!-- 4 Core Financial KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Total Net Sales -->
+<div class="p-space-lg rounded-xl bg-surface-cream-raised shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-surface-container-low/60 -z-0"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted tracking-wider uppercase">총 순매출액</span>
+<span class="px-2 py-0.5 rounded text-status-positive font-label-sm text-label-sm bg-status-positive-bg font-semibold">+14.2% YoY</span>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-data-tabular-lg text-headline-xl text-text-charcoal">₩9,240,000</span>
+<span class="font-body-sm text-body-sm text-text-muted">실적</span>
+</div>
+</div>
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span class="">월 마감 예상</span>
+<span class="font-data-tabular-md text-data-tabular-md text-primary font-bold">₩14,800,000</span>
+</div>
+</div>
+<!-- Card 2: COGS & Ratio -->
+<div class="p-space-lg rounded-xl bg-surface-cream-raised shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-status-warning-bg/40 -z-0"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted tracking-wider uppercase">매출원가 (COGS)</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-charcoal font-semibold">원가율 27.9%</span>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-data-tabular-lg text-headline-xl text-text-charcoal">₩2,580,000</span>
+<span class="font-body-sm text-body-sm text-text-muted">원두·유제품·부자재</span>
+</div>
+</div>
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span class="">목표 관리선 (30.0%)</span>
+<span class="font-data-tabular-md text-data-tabular-md text-status-positive font-semibold">-2.1%p 방어중</span>
+</div>
+</div>
+<!-- Card 3: Prorated SG&A -->
+<div class="p-space-lg rounded-xl bg-surface-cream-raised shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-surface-dim/40 -z-0"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted tracking-wider uppercase">판매관리비 (18일 안분)</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold">고정 8개 항목</span>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-data-tabular-lg text-headline-xl text-text-charcoal">₩4,120,000</span>
+<span class="font-body-sm text-body-sm text-text-muted">일할 배분</span>
+</div>
+</div>
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span class="">월 환산 약정액</span>
+<span class="font-data-tabular-md text-data-tabular-md text-text-charcoal font-medium">₩6,866,000</span>
+</div>
+</div>
+<!-- Card 4: Operating Income & Margin -->
+<div class="p-space-lg rounded-xl bg-primary-container text-on-primary shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-surface-tint/20 -z-0"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-primary-container tracking-wider uppercase">영업이익 (Operating Income)</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-cream-raised text-primary font-bold">이익률 27.5%</span>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-data-tabular-lg text-headline-xl text-surface-bright font-bold">₩2,540,000</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">현재 누적</span>
+</div>
+</div>
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center justify-between text-on-primary-container font-body-sm text-body-sm">
+<span class="">월말 예상 영업이익</span>
+<span class="font-data-tabular-md text-data-tabular-md text-surface-bright font-bold">₩4,050,000 (27.4%)</span>
+</div>
+</div>
+</div>
+<!-- Middle Visual Area: Split Analytics & Waterfall Visual -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Trend Graph: Actual (Solid) vs Forecast (Dashed) -->
+<div class="xl:col-span-8 p-space-lg rounded-xl bg-surface-cream-raised shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal">9월 일별 누적 순매출 및 손익분기선(BEP) 추이</h2>
+<p class="font-body-sm text-body-sm text-text-muted">1~18일 실적 마감선 돌파 후 22일 기점 고정비 전액 회수(BEP 조기 달성 예상)</p>
+</div>
+<div class="flex items-center gap-space-sm text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="text-text-charcoal">누적 매출실적</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="text-text-muted">예상 궤적</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-0.5 bg-status-critical"></span>
+<span class="text-status-critical">누적 총비용선</span>
+</div>
+</div>
+</div>
+<!-- Compact High-Precision SVG Chart -->
+<div class="w-full h-56 relative flex items-end">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1100 200"><line stroke="#f0e6de" stroke-width="1" x1="0" x2="1100" y1="180" y2="180"></line><line stroke="#f0e6de" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="1100" y1="120" y2="120"></line><line stroke="#f0e6de" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="1100" y1="60" y2="60"></line><polygon fill="#fcf2e9" opacity="0.7" points="50,180 50,165 140,152 230,138 320,126 410,110 500,94 590,78 680,62 680,180"></polygon><line stroke="#725947" stroke-dasharray="3 3" stroke-width="1.5" x1="680" x2="680" y1="20" y2="180"></line><text class="fill-primary font-label-sm" font-size="11" font-weight="600" x="685" y="32">오늘 (09.18 마감)</text><path d="M 50,170 L 140,160 L 230,150 L 320,138 L 410,128 L 500,116 L 590,105 L 680,94 L 770,84 L 860,75 L 950,66 L 1040,58" fill="none" stroke="#9E2A2B" stroke-linecap="round" stroke-width="2.5"></path><path d="M 50,165 L 140,152 L 230,138 L 320,126 L 410,110 L 500,94 L 590,78 L 680,62" fill="none" stroke="#322011" stroke-linecap="round" stroke-width="3.5"></path><path d="M 680,62 L 770,50 L 860,38 L 950,26 L 1040,14" fill="none" stroke="#81756d" stroke-dasharray="5 5" stroke-linecap="round" stroke-width="2.5"></path><circle cx="50" cy="165" fill="#322011" r="4"></circle><circle cx="230" cy="138" fill="#322011" r="4"></circle><circle cx="500" cy="94" fill="#322011" r="4"></circle><circle cx="680" cy="62" fill="#4a3525" r="5.5" stroke="#FFFFFF" stroke-width="2.5"></circle><circle cx="1040" cy="14" fill="#ffffff" r="5" stroke="#81756d" stroke-width="2"></circle><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="40" y="196">09.01</text><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="220" y="196">09.06</text><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="400" y="196">09.11</text><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="580" y="196">09.16</text><text class="fill-primary font-bold font-data-tabular-sm" font-size="11" x="668" y="196">09.18</text><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="850" y="196">09.24(E)</text><text class="fill-text-muted font-data-tabular-sm" font-size="11" x="1025" y="196">09.30(E)</text></svg>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-text-muted pt-space-xs bg-surface-container-low px-space-md py-2 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-status-positive">verified</span>
+<span class="">손익분기점(BEP): <strong>₩8,940,000</strong> (09월 17일 16:30 돌파 달성 완료)</span>
+</div>
+<span class="font-data-tabular-sm text-data-tabular-sm text-status-positive font-bold">안전한계율 28.4%</span>
+</div>
+</div>
+<!-- Right Side: Cost Structure Proration Breakdown -->
+<div class="xl:col-span-4 p-space-lg rounded-xl bg-surface-cream-raised shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-charcoal">비용 구조 비중 (18일 기준)</h2>
+<p class="font-body-sm text-body-sm text-text-muted">총비용 ₩6,700,000 구성 분석</p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+</span>
+</div>
+<!-- Cost Component Bars -->
+<div class="flex flex-col gap-space-sm">
+<div>
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm">
+<span class="text-text-charcoal font-semibold">인건비 (정직원/파트타임)</span>
+<span class="font-data-tabular-sm text-data-tabular-sm text-text-charcoal font-bold">₩1,080,000 (26.9%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 26.9%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm">
+<span class="text-text-charcoal font-semibold">재료 및 원두 원가</span>
+<span class="font-data-tabular-sm text-data-tabular-sm text-text-charcoal font-bold">₩2,240,000 (33.4%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 33.4%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm">
+<span class="text-text-charcoal font-semibold">매장 임차료 (일할 18일분)</span>
+<span class="font-data-tabular-sm text-data-tabular-sm text-text-charcoal font-bold">₩960,000 (14.3%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-status-warning rounded-full" style="width: 14.3%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm">
+<span class="text-text-charcoal font-semibold">수도광열비 및 관리비</span>
+<span class="font-data-tabular-sm text-data-tabular-sm text-text-charcoal font-bold">₩432,000 (6.4%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 6.4%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm">
+<span class="text-text-charcoal font-semibold">수수료, 광고, 기타 잡비</span>
+<span class="font-data-tabular-sm text-data-tabular-sm text-text-charcoal font-bold">₩1,988,000 (19.0%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 19.0%;"></div>
+</div>
+</div>
+</div>
+<!-- Quick Summary Card inside panel -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">일 평균 발생 고정비</span>
+<span class="font-data-tabular-md text-data-tabular-md text-text-charcoal font-bold">₩228,889 / 일</span>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-text-muted">일 손익분기 매출</span>
+<span class="font-data-tabular-md text-data-tabular-md text-primary font-bold">₩496,667 / 일</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed P&L Statement (손익 상세 명세서 테이블) -->
+<div class="w-full rounded-xl bg-surface-cream-raised shadow-sm overflow-hidden">
+<div class="p-space-md bg-surface-cream-sunken flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">receipt_long</span>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal">손익 상세 명세서 (발생 기간 기준)</h3>
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-container-high text-text-muted">단위: 원 (KRW)</span>
+</div>
+<!-- Table View Utility Filter -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-cream-raised font-label-sm text-label-sm text-text-charcoal shadow-xs hover:bg-surface-container cursor-pointer font-semibold">
+          전체 펼치기
+        </button>
+<button class="px-space-sm py-1 rounded bg-surface-cream-raised font-label-sm text-label-sm text-text-muted shadow-xs hover:text-text-charcoal cursor-pointer">
+          고정비만 보기
+        </button>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded bg-surface-cream-raised font-label-sm text-label-sm text-text-muted shadow-xs hover:text-text-charcoal cursor-pointer">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span class="">엑셀 저장</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-cream-sunken/60 text-text-muted font-label-sm text-label-sm">
+<th class="py-space-sm px-space-md font-semibold">계정과목 및 세부 내역</th>
+<th class="py-space-sm px-space-md font-semibold text-center w-28">구분 / 방식</th>
+<th class="py-space-sm px-space-md font-semibold text-right w-44">9월 약정/예상 총액</th>
+<th class="py-space-sm px-space-md font-semibold text-right w-44">당기 실적 (1~18일)</th>
+<th class="py-space-sm px-space-md font-semibold text-right w-44">미마감 예상 (19~30일)</th>
+<th class="py-space-sm px-space-md font-semibold text-right w-24">매출 대비 비중</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-md text-body-md">
+<!-- SECTION 1: 매출액 -->
+<tr class="bg-surface-container-low/40 font-bold text-text-charcoal">
+<td class="py-space-sm px-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+<span class="">Ⅰ. 총 매출액 (Gross Revenue)</span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-cream-sunken text-label-sm font-label-sm text-primary">실적누적</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">14,800,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-charcoal">9,240,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">5,560,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm font-semibold">100.0%</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded text-label-sm font-label-sm bg-status-positive-bg text-status-positive">매장</span>
+<span class="">홀 내 취식 매출 (음료 + 베이커리)</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">POS 실시간</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">9,900,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">6,180,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">3,720,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">66.9%</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded text-label-sm font-label-sm bg-status-warning-bg text-status-warning">포장</span>
+<span class="">테이크아웃 및 패키지 판매</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">POS 실시간</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">4,900,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">3,060,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1,840,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">33.1%</td>
+</tr>
+<!-- SECTION 2: 매출원가 -->
+<tr class="bg-surface-container-low/40 font-bold text-text-charcoal">
+<td class="py-space-sm px-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+<span class="">Ⅱ. 매출원가 (Cost of Goods Sold)</span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-cream-sunken text-label-sm font-label-sm text-primary">실제사용량</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">4,130,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-charcoal">2,580,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">1,550,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm font-semibold">27.9%</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant">음료 원가 (원두, 우유, 시럽 등)</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">BOM 차감</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">2,600,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">1,620,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">980,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">17.5%</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant">디저트·베이커리 원자재비</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">완제입고/소진</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1,010,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">630,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">380,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">6.8%</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant">일회용기·패키징 소모 부자재비</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">출고 실사</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">520,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">330,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">190,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">3.6%</td>
+</tr>
+<!-- SUB-TOTAL: 매출총이익 -->
+<tr class="bg-surface-container-high/40 font-bold text-primary">
+<td class="py-space-sm px-space-md pl-6">↳ 매출총이익 (Gross Profit)</td>
+<td class="py-space-sm px-space-md text-center text-label-sm font-label-sm">매출 - 원가</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md">10,670,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md">6,660,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">4,010,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm font-bold">72.1%</td>
+</tr>
+<!-- SECTION 3: 변동 판매수수료 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-text-charcoal pl-6">
+              Ⅲ. 결제/카드 수수료 (PG &amp; VAN)
+            </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-cream-sunken text-label-sm font-label-sm text-text-muted">실제승인액</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">222,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">138,600</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">83,400</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1.5%</td>
+</tr>
+<!-- SECTION 4: 고정 판매관리비 8개 항목 일할 배분 (PRD 요구사항) -->
+<tr class="bg-surface-container-low/40 font-bold text-text-charcoal">
+<td class="py-space-sm px-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+<span class="">Ⅳ. 고정비 및 판매관리비 (월비용 일할 배분: 18일 / 30일)</span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-label-sm font-label-sm text-primary font-semibold">18/30 안분</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">6,644,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-charcoal">3,981,400</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-md text-data-tabular-md text-text-muted">2,662,600</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm font-semibold">43.1%</td>
+</tr>
+<!-- 1. 임차료 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">1. 부동산 임차료</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 계약: ₩1,600,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1,600,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">960,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">640,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">10.4%</td>
+</tr>
+<!-- 2. 인건비 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">2. 인건비 (정직원 및 파트타이머)</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 계획: ₩1,800,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1,800,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">1,080,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">720,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">11.7%</td>
+</tr>
+<!-- 3. 4대보험 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">3. 4대 사회보험료 (사업주 부담금)</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 고정: ₩220,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">220,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">132,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">88,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1.4%</td>
+</tr>
+<!-- 4. 수도광열비 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">4. 수도광열비 (전력, 수도, 가스 요금)</span>
+<span class="font-body-sm text-body-sm text-text-muted">예측 고정: ₩540,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">540,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">324,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">216,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">3.5%</td>
+</tr>
+<!-- 5. 건물 관리비 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">5. 건물 관리비 및 청소용역비</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 고정: ₩180,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">180,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">108,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">72,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1.2%</td>
+</tr>
+<!-- 6. 통신비 및 POS/보안 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">6. 통신비 및 솔루션 구독 (POS·CCTV·인터넷)</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 고정: ₩110,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">110,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">66,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">44,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">0.7%</td>
+</tr>
+<!-- 7. 마케팅 및 광고비 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">7. 마케팅·광고비 (플레이스/SNS 스폰서)</span>
+<span class="font-body-sm text-body-sm text-text-muted">집행예산: ₩350,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">350,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">210,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">140,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">2.3%</td>
+</tr>
+<!-- 8. 소모품비 및 유지보수 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-space-sm px-space-md pl-10 text-on-surface-variant flex items-center justify-between pr-8">
+<span class="">8. 매장 소모품비 및 장비 필터 교체비</span>
+<span class="font-body-sm text-body-sm text-text-muted">월 평균: ₩250,000</span>
+</td>
+<td class="py-space-sm px-space-md text-center text-text-muted font-body-sm text-body-sm">일할 (18일)</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">250,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-charcoal">150,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">100,000</td>
+<td class="py-space-sm px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-text-muted">1.6%</td>
+</tr>
+<!-- GRAND TOTAL: 영업이익 (Highlight Row) -->
+<tr class="bg-primary text-on-primary font-bold">
+<td class="py-space-md px-space-md text-headline-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">stars</span>
+<span class="">Ⅴ. 최종 영업이익 (Operating Profit)</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-cream-raised text-primary text-label-sm font-label-sm font-bold">마진 27.5%</span>
+</td>
+<td class="py-space-md px-space-md text-right font-data-tabular-lg text-headline-md text-primary-fixed">₩4,050,000</td>
+<td class="py-space-md px-space-md text-right font-data-tabular-lg text-headline-md text-surface-bright">₩2,540,000</td>
+<td class="py-space-md px-space-md text-right font-data-tabular-lg text-headline-md text-primary-fixed-dim">₩1,510,000</td>
+<td class="py-space-md px-space-md text-right font-data-tabular-sm text-data-tabular-sm text-surface-bright">27.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Operational Insights Bottom Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-cream-raised shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-status-positive-bg flex items-center justify-center text-status-positive shrink-0">
+<span class="material-symbols-outlined text-[22px]">trending_up</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-charcoal">재료 원가율 최적 상태</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          9월 18일 현재 원가율 27.9%로 업계 권장 수준(30~33%) 대비 4.1%p 낮아 마진 건전성이 매우 우수합니다.
+        </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-cream-raised shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-status-warning-bg flex items-center justify-center text-status-warning shrink-0">
+<span class="material-symbols-outlined text-[22px]">event_repeat</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-charcoal">12일간의 예상 마감 여유분</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          잔여 12일간 일 평균 순매출 ₩463,333 이상 달성 시 당월 목표 영업이익 400만원 고지를 안정적으로 돌파합니다.
+        </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-cream-raised shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-charcoal">발생주의 회계 동기화</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          월말 카드 대금이나 급여 지급일 일시 쏠림에 의한 왜곡 없이, 일자별 균등 일할 배분 기준으로 실제 영업성을 투명화합니다.
+        </p>
+</div>
+</div>
+</div>
+<!-- Modal: 비용 직접 등록 및 일할 배분 조정 모달 (Hidden by default, interactive trigger) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-xs hidden" id="cost-modal">
+<div class="relative w-full max-w-xl mx-4 rounded-xl bg-surface-cream-raised shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-cream-sunken flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-surface-cream-raised flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">post_add</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal">월 비용 직접 등록 &amp; 일할 배분 설정</h3>
+<p class="font-body-sm text-body-sm text-text-muted">비용 발생월 기준 배분(PRD 제8절 비용 기록 A안)</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:bg-surface-container hover:text-text-charcoal cursor-pointer" onclick="toggleCostModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<form class="p-space-lg flex flex-col gap-space-md" onsubmit="handleCostSubmit(event)">
+<!-- Explanation Chip -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs text-text-charcoal font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">help_outline</span>
+<span class="">
+<strong>A안 원칙:</strong> 실지출일(결제일)과 무관하게 실제 서비스/용역이 제공된 <strong>해당 월의 전체 일수로 일할 자동 분할(1/30)</strong>되어 일별 손익에 반영됩니다.
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<!-- 발생 연월 -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-charcoal font-semibold">비용 귀속 월</label>
+<input class="h-10 px-3 rounded-lg bg-surface-cream-sunken/60 font-data-tabular-md text-data-tabular-md text-text-charcoal focus:bg-surface-cream-raised outline-none transition-colors" required="" type="month" value="2026-09">
+</div>
+<!-- 비용 항목 카테고리 -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-charcoal font-semibold">비용 계정과목</label>
+<select class="h-10 px-3 rounded-lg bg-surface-cream-sunken/60 font-body-md text-body-md text-text-charcoal focus:bg-surface-cream-raised outline-none transition-colors" required="">
+<option value="rent">1. 매장 임차료</option>
+<option value="salary">2. 인건비 (급여)</option>
+<option value="insurance">3. 4대 사회보험료</option>
+<option value="utility">4. 수도광열비</option>
+<option value="maintenance">5. 건물 관리비</option>
+<option value="telecom">6. 통신/보안/POS 솔루션</option>
+<option value="marketing">7. 광고홍보비</option>
+<option value="supplies">8. 소모품/필터/수리비</option>
+<option value="custom">기타 잡비 (직접 입력)</option>
+</select>
+</div>
+</div>
+<!-- 비용 금액 입력 -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-charcoal font-semibold">비용 총액 (VAT 별도)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-text-muted font-bold">₩</span>
+<input class="w-full h-10 pl-8 pr-12 rounded-lg bg-surface-cream-sunken/60 font-data-tabular-md text-data-tabular-md text-text-charcoal focus:bg-surface-cream-raised outline-none transition-colors" id="modal-cost-amount" placeholder="예: 1,600,000" required="" type="text" value="1,600,000">
+<span class="absolute right-3 font-body-sm text-body-sm text-text-muted">원</span>
+</div>
+</div>
+<!-- 배분 방식 선택 라디오 -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-text-charcoal font-semibold">기간 배분 공식</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<label class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="accent-primary" name="allocationMethod" type="radio" value="daily_uniform">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-charcoal font-bold">월력 일수 균등 일할</span>
+<span class="font-body-sm text-body-sm text-text-muted">30일 동안 일일 1/30 배분</span>
+</div>
+</label>
+<label class="p-space-sm rounded-lg bg-surface-cream-sunken/60 flex items-center gap-space-xs cursor-pointer hover:bg-surface-container transition-colors">
+<input class="accent-primary" name="allocationMethod" type="radio" value="operating_days">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-charcoal font-bold">실제 영업일 가중 배분</span>
+<span class="font-body-sm text-body-sm text-text-muted">정기 휴무일 제외 배분</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 일할 환산 미리보기 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-text-muted">1일 기준 산출 배분액:</span>
+<span class="font-data-tabular-md text-data-tabular-md text-primary font-bold">₩53,333 / 일 (18일 누적 ₩960,000)</span>
+</div>
+<!-- Modal Footer Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-cream-sunken font-label-md text-label-md text-text-muted hover:text-text-charcoal cursor-pointer" onclick="toggleCostModal(false)" type="button">
+            취소
+          </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-md hover:opacity-90 active:scale-95 transition-all cursor-pointer" type="submit">
+            배분 규칙 저장 &amp; 손익 재계산
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  function switchPeriod(mode) {
+    const dailyBtn = document.getElementById('btn-toggle-daily');
+    const monthlyBtn = document.getElementById('btn-toggle-monthly');
+
+    if (mode === 'daily') {
+      dailyBtn.className = 'px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all bg-surface-cream-raised text-primary font-bold shadow-sm cursor-pointer';
+      monthlyBtn.className = 'px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-charcoal cursor-pointer';
+    } else {
+      monthlyBtn.className = 'px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all bg-surface-cream-raised text-primary font-bold shadow-sm cursor-pointer';
+      dailyBtn.className = 'px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-charcoal cursor-pointer';
+    }
+  }
+
+  function toggleCostModal(show) {
+    const modal = document.getElementById('cost-modal');
+    if (show) {
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function handleCostSubmit(e) {
+    e.preventDefault();
+    toggleCostModal(false);
+  }
+</script></main></div>
+
+</body></html>
